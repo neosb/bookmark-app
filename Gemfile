@@ -11,6 +11,7 @@ end
 
 group :test do
 	gem 'capybara'
+	gem 'spork'
 end
 
 gem 'pg'
