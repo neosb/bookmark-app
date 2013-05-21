@@ -1,5 +1,9 @@
 @import "bootstrap";
 
+/* variables */
+$lightGreen: #480;
+$dark: #222;
+
 /* universal */
 html {
 	overflow-y: scroll;
@@ -14,10 +18,10 @@ textarea {
 	resize: vertical;
 }
 .center {
-	text-align: center;
-}
-.center h1 {
-	margin-bottom: 10px;
+	text-align: center;	
+	h1 {
+		margin-bottom: 10px;
+	}
 }
 
 /* typography */
@@ -36,7 +40,7 @@ h2 {
 	margin-bottom: 30px;
 	text-align: center;
 	font-weight: normal;
-	color: #478;
+	color: $lightGreen;
 }
 p {
 	font-size: 1.1em;
@@ -48,16 +52,16 @@ p {
 	float: left;
 	margin-right: 10px;
 	font-size: 1.7em;
-	color: #478;
+	color: $lightGreen;
 	text-transform: uppercase;
 	letter-spacing: -1px;
 	padding-top: 9px;
 	font-weight: bold;
-	line-height: 1;
-}
-#logo:hover {
-	color: #000;
-	text-decoration: none;
+	line-height: 1;	
+	&:hover {
+		color: $blue;
+		text-decoration: none;
+	}
 }
 
 /* footer */
@@ -66,21 +70,25 @@ footer {
 	padding-top: 5px;
 	border-top: 1px solid #eaeaea;
 	color: #999;
+	a {
+		color: #555;
+		&:hover {
+			color: $dark;
+		}
+	}
+	small {
+		float: left;
+	}
+	ul {
+		float: right;
+		list-style: none;
+		li {
+			float: left;
+			margin-left: 10px;
+		}
+	}
 }
-footer a {
-	color: #555;
-}
-footer a:hover {
-	color: #222;
-}
-footer small {
-	float: left;
-}
-footer ul {
-	float: right;
-	list-style: none;
-}
-footer ul li {
-	float: left;
-	margin-left: 10px;
-}
+
+
+
+
