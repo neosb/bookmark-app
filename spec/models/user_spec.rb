@@ -12,29 +12,63 @@
 require 'spec_helper'
 
 describe User do
-  before { @user= User.new ( {name: "test_user", email: "mail@.example.com"} ) }
+  before { @user= User.new ( {name: "test_user", email: "mail@.example.com", 
+  	password: "foobar", password_confirmation: "foobar"} ) }
 	  subject { @user }
 
+	  # check columns
 	  it { should respond_to(:name) }
 	  it { should respond_to(:email) }
+	  it { should respond_to(:password_digest)}
+	  it { should respond_to(:password)}
+	  it { should respond_to(:password_confirmation)}
+
+	  # validation
 	  it { should be_valid }
 
-	  # name and email presence validation
+	  # password presence validation
+	  describe "when password is not present" do
+	  	before { @user.password = @user.password_confirmation = "" }
+	  	it { should_not be_valid }
+	  end
+
+	  # password minimum length validation
+	  describe "when password length is too short" do
+	  	before { @user.password = "a" * 5 }
+	  	it { should_not be_valid }
+	  end
+
+	  # password_confirmation doesn't match with password validation
+	  describe "when password_confirmation is not the same as password" do
+	  	before { @user.password_confirmation = "mismatch" }
+	  	it { should_not be_valid}
+	  end
+
+	  # not nil password_confirmation validation
+	  describe "when password_confirmation is nil" do
+	  	before { @user.password_confirmation = nil }
+	  	it { should_not be_valid}
+	  end
+
+	  # name presence validation
 	  describe "when name is not present" do
 	  	before { @user.name = "" }
 	  	it { should_not be_valid }
 	  end
+
+	  # name length validation
 	  describe "when name is too long" do
 	  	before { @user.name = "a" * 51 }
 	  	it { should_not be_valid}
 	  end
 
+	  # email presence validation
 	  describe "when email is not present" do
 	  	before { @user.email = "" }
 	  	it { should_not be_valid }
 	  end
 
-		# check email format
+		# email format validation
 		describe "when email format is invalid" do
 			it "should be invalid" do
 				addresses = %w[user@foo,com user_at_foo.org example.user@foo. 
