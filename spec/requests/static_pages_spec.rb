@@ -16,7 +16,7 @@ require 'spec_helper'
       click_link "bookmark-app"
       should have_selector 'h1', text: "host.bookmarks"
       click_link "contact"
-      should have_selector 'h1', text: "Walked Out team"
+      should have_selector 'h1', text: "Whales team"
       click_link "F1.help"
       should have_selector 'h1', text: "F1.help"
       # click_on "signup_button"
@@ -40,7 +40,7 @@ require 'spec_helper'
 
     describe "Contact page" do
       before { visit contact_path }
-      let(:heading) {'Walked Out team'}
+      let(:heading) {'Whales team'}
       #let(:page_title) {''}
       it_should_behave_like "all static pages"
     end
