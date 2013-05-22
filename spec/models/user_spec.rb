@@ -22,9 +22,27 @@ describe User do
 	  it { should respond_to(:password_digest)}
 	  it { should respond_to(:password)}
 	  it { should respond_to(:password_confirmation)}
+	  it { should respond_to(:authenticate)}
 
 	  # validation
 	  it { should be_valid }
+
+	  # password authentication
+	  describe "return value of authenticate method" do
+	  	before { @user.save }
+	  	let(:found_user) { User.find_by_email(@user.email) }
+
+	  	describe "with valid password" do
+	  		it { should == found_user.authenticate(@user.password) }	
+	  	end
+
+	  	describe "with invalid password" do
+	  		let(:user_for_invalid_password) { found_user.authenticate("invalid") }
+	  		it { should_not == user_for_invalid_password }
+	  		specify { user_for_invalid_password.should be_false }
+	  	end
+	  
+	  end
 
 	  # password presence validation
 	  describe "when password is not present" do
@@ -34,7 +52,7 @@ describe User do
 
 	  # password minimum length validation
 	  describe "when password length is too short" do
-	  	before { @user.password = "a" * 5 }
+	  	before { @user.password = @user.password_confirmation = "a" * 5 }
 	  	it { should_not be_valid }
 	  end
 
