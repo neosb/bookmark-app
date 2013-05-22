@@ -8,14 +8,19 @@
 
 	<%= link_to "sign.up now!", signup_path, 
 		class: "btn btn-large btn-primary", id: "signup_button" %>
-		<br><br>
+	<br><br>
+	<form class="form-search">
+    <input type="text" class="span6 search-query" placeholder="search through bookmarks">
+    <button type="submit" class="btn"><i class="icon-search"></i> search</button>
+	</form>
 	<table class="table table-striped">
 		<tr>
 				<td><strong>title</strong></td><td><strong>tags<strong></td>
 				<td><strong>description<strong></td>
 		</tr>
 		<tr>
-			<td>9gag</td><td>addictive fun more fun</td><td>don't you even go there ;)</td>
+			<td>9gag</td><td>addictive fun more fun</td>
+			<td>don't you even go there ;)</td>
 		</tr>
 		<tr>
 			<td>bookmark-app</td><td>the next best thing</td><td>you will see</td>
