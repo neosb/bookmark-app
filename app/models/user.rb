@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   has_secure_password
 
   # callback safety
-  before_save { |user| user.email = email.downcase }
+  before_save { self.email.downcase! }
 
   # name validation
   validates :name, presence: true, length: { maximum: 50 }
