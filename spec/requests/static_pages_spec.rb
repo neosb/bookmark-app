@@ -17,8 +17,8 @@ require 'spec_helper'
       should have_selector 'h1', text: "host.bookmarks"
       click_link "contact"
       should have_selector 'h1', text: "Whales team"
-      click_link "F1.help"
-      should have_selector 'h1', text: "F1.help"
+      click_link "help"
+      should have_selector 'h1', text: "help"
       # click_on "signup_button"
       # should have_selector 'h1', text: "sign.up"
       
@@ -33,7 +33,7 @@ require 'spec_helper'
 
     describe "Help page" do
       before { visit help_path }
-      let(:heading) {'F1.help'}
+      let(:heading) {'help'}
       #let(:page_title) {''}
       it_should_behave_like "all static pages"
     end
