@@ -1,7 +1,7 @@
 <% provide(:title, 'sign.up') %>
 <h1>sign.up</h1>
 <div class="row">
-	<div class="offset3">
+	<div class="span6 offset3">
 		<form class="form-horizontal">
 			<%= form_for(@user) do |f| %>
 				
@@ -10,7 +10,7 @@
 					<%= f.label :name, "name", class: "control-label", 
 					for: "input_name" %>
 					<%= f.text_field :name, id: "input_name", 
-						placeholder: "Mr X" %>
+						placeholder: "Mrs X" %>
 				</div>
 
 				<div class="control-group">
@@ -22,20 +22,21 @@
 
 				<div class="control-group">
 					<%= f.label :password, "password", class: "control-label", 
-						for: "input_password" %>
+						for: "input_password", id: "insert_password" %>
 					<%= f.text_field :password, id: "input_password", 
-						placeholder: "at least 6 characters" %>
+						placeholder: "minimum 6 characters" %>
 				</div>
 
 				<div class="control-group">
 					<%= f.label :password_confirmation, "confirm", 
 						class: "control-label", for: "input_password_confirmation" %>
 					<%= f.text_field :password_confirmation, 
-						id: "input_password_confirmation", placeholder: "password" %>
+						id: "input_password_confirmation", 
+						placeholder: "repeat password please" %>
 				</div>
 
 				<div class="control-group">
-					<%= f.submit "create my account", class: "btn offset2" %>
+					<%= f.submit "create my account", class: "btn btn-success offset2" %>
 				</div>
 			<% end %>
 		</form>
