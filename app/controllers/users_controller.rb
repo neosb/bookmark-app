@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(params[:user])
   	if @user.save
-      flash[:success] = "welcome to the bookmark-app"
+      flash[:success] = "welcome to bookmark-app"
   		redirect_to @user
   	else
   		render 'new'
