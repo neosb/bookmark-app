@@ -19,6 +19,8 @@ require 'spec_helper'
       should have_selector 'h1', text: "Whales team"
       click_link "help"
       should have_selector 'h1', text: "help"
+
+      # don't know why it's not finding button
       # click_on "signup_button"
       # should have_selector 'h1', text: "sign.up"
       

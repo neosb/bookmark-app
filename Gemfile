@@ -13,6 +13,7 @@ end
 group :test do
 	gem 'capybara'
 	gem 'spork'
+	gem 'factory_girl_rails'
 end
 
 gem 'pg'

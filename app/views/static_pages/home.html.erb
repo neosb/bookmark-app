@@ -1,4 +1,4 @@
-<div class="center hero-unit">
+<div class="center">
 	<h1>host.bookmarks in one place</h1>
 
 	<h2>... soon.will be full of bookmarks ...</h2>
@@ -6,35 +6,35 @@
 	<p>Oh, yes you can store bookmarks, lookup, copy bookmarks 
 	of others or keep them private, so nobody else can see them.</p>
 
-	<%= link_to "sign.up now!", signup_path, 
+	<%= link_to "sign.up soon", signup_path, 
 		class: "btn btn-large btn-primary", id: "signup_button" %>
 	<br><br>
 	<form class="form-search">
     <input type="text" class="span6 search-query" placeholder="search through bookmarks">
     <button type="submit" class="btn"><i class="icon-search"></i> search</button>
 	</form>
-	<table class="table table-striped">
+	<table class="table table-hover">
 		<tr>
-				<td><strong>title</strong></td><td><strong>tags<strong></td>
-				<td><strong>description<strong></td>
+				<td></td><td class="span3"><strong>title</strong></td><td class="span4"><strong>tags<strong></td>
+				<td class="span5"><strong>description<strong></td>
 		</tr>
 		<tr>
-			<td>9gag</td><td>addictive fun more fun</td>
+			<td><i class="icon-share"></i><td>9gag</td><td>addictive fun more fun</td>
 			<td>don't you even go there ;)</td>
 		</tr>
 		<tr>
-			<td>bookmark-app</td><td>the next best thing</td><td>you will see</td>
+			<td><i class="icon-share"></i><td>bookmark-app</td><td>the next best thing</td><td>you will see</td>
 		</tr>
 	</table>
 	<div class="pagination">
 	  <ul>
-	    <li><a href="#">Prev</a></li>
+	    <li><a href="#"><i class="icon-chevron-left"></i> Prev</a></li>
 	    <li><a href="#">1</a></li>
 	    <li><a href="#">2</a></li>
 	    <li><a href="#">3</a></li>
 	    <li><a href="#">4</a></li>
 	    <li><a href="#">5</a></li>
-	    <li><a href="#">Next</a></li>
+	    <li><a href="#">Next <i class="icon-chevron-right"></i></a></li>
 	  </ul>
 	</div>
 </div>

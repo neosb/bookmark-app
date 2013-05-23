@@ -1,5 +1,43 @@
 <% provide(:title, 'sign.up') %>
-<div class="hero-unit">
-	<h1>sign.up</h1>
-	<h2>... soon ...</h2>
+<h1>sign.up</h1>
+<div class="row">
+	<div class="offset3">
+		<form class="form-horizontal">
+			<%= form_for(@user) do |f| %>
+				
+			
+				<div class="control-group">
+					<%= f.label :name, "name", class: "control-label", 
+					for: "input_name" %>
+					<%= f.text_field :name, id: "input_name", 
+						placeholder: "Mr X" %>
+				</div>
+
+				<div class="control-group">
+					<%= f.label :email, "email", class: "control-label", 
+					for: "input_email" %>
+					<%= f.text_field :email, id: "input_email", 
+						placeholder: "x@files.com" %>
+				</div>
+
+				<div class="control-group">
+					<%= f.label :password, "password", class: "control-label", 
+						for: "input_password" %>
+					<%= f.text_field :password, id: "input_password", 
+						placeholder: "at least 6 characters" %>
+				</div>
+
+				<div class="control-group">
+					<%= f.label :password_confirmation, "confirm", 
+						class: "control-label", for: "input_password_confirmation" %>
+					<%= f.text_field :password_confirmation, 
+						id: "input_password_confirmation", placeholder: "password" %>
+				</div>
+
+				<div class="control-group">
+					<%= f.submit "create my account", class: "btn offset2" %>
+				</div>
+			<% end %>
+		</form>
+	</div>
 </div>
